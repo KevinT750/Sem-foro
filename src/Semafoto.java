@@ -1,14 +1,6 @@
 
 import javax.swing.ImageIcon;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-/**
- *
- * @author User
- */
 public class Semafoto extends javax.swing.JFrame {
 
     int valorActual = 0;
@@ -73,20 +65,25 @@ public class Semafoto extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36)
+                        .addComponent(jblRojo, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jblRojo, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(102, 102, 102)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnCambiar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jblAmarillo)
-                                .addGap(121, 121, 121)
-                                .addComponent(jblVerde, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(21, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCambiar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(jblAmarillo)
+                        .addGap(80, 80, 80)
+                        .addComponent(jblVerde, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(33, 33, 33))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(142, 142, 142))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,10 +95,13 @@ public class Semafoto extends javax.swing.JFrame {
                     .addComponent(jblRojo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jblAmarillo, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCambiar))
-                .addGap(60, 60, 60))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnCambiar)
+                        .addGap(68, 68, 68))))
         );
 
         pack();
@@ -111,37 +111,38 @@ public class Semafoto extends javax.swing.JFrame {
 
         valorActual++;
         if (valorActual > 3) {
-            valorActual = 1;
-        }
-        switch (valorActual) {
-            case 1 -> {
-                ImageIcon a = new ImageIcon("C:\\Users\\User\\OneDrive\\Documentos\\NetBeansProjects\\Semaforo\\src\\Resourse\\images.jpg");
-                jblRojo.setIcon(a);
-                jblRojo.setVisible(true);
-                jblAmarillo.setVisible(false);
-                jblVerde.setVisible(false);
+        valorActual = 1;
+    }
+    switch (valorActual) {
+        case 1 -> {
+            ImageIcon a = new ImageIcon("C:\\Users\\User\\OneDrive\\Documentos\\NetBeansProjects\\Semaforo\\src\\Resourse\\images.jpg");
+            jblRojo.setIcon(a);
+            jblAmarillo.setIcon(null);
+            jblVerde.setIcon(null);
+            jblRojo.setVisible(true);
+            jblAmarillo.setVisible(false);
+            jblVerde.setVisible(false);
             }
-            case 2 -> {
-                
-
-                jblRojo.setVisible(false);
-                ImageIcon b = new ImageIcon("C:\\Users\\User\\OneDrive\\Documentos\\NetBeansProjects\\Semaforo\\src\\Resourse\\images (1).jpg");
-                jblAmarillo.setIcon(b);
-                jblAmarillo.setVisible(true);
-                jblVerde.setVisible(false);
+        case 2 -> {
+            ImageIcon b = new ImageIcon("C:\\Users\\User\\OneDrive\\Documentos\\NetBeansProjects\\Semaforo\\src\\Resourse\\images (1).jpg");
+            jblRojo.setIcon(null);
+            jblAmarillo.setIcon(b);
+            jblVerde.setIcon(null);
+            jblRojo.setVisible(false);
+            jblAmarillo.setVisible(true);
+            jblVerde.setVisible(false);
             }
-            case 3 -> {
-                
-                
-                jblAmarillo.setVisible(false);
-                jblRojo.setVisible(false);
-                ImageIcon c = new ImageIcon("C:\\Users\\User\\OneDrive\\Documentos\\NetBeansProjects\\Semaforo\\src\\Resourse\\images (2).jpg");
-                jblVerde.setIcon(c);
-                jblVerde.setVisible(true);
+        case 3 -> {
+            ImageIcon c = new ImageIcon("C:\\Users\\User\\OneDrive\\Documentos\\NetBeansProjects\\Semaforo\\src\\Resourse\\images (2).jpg");
+            jblRojo.setIcon(null);
+            jblAmarillo.setIcon(null);
+            jblVerde.setIcon(c);
+            jblRojo.setVisible(false);
+            jblAmarillo.setVisible(false);
+            jblVerde.setVisible(true);
             }
-            default ->
-                throw new AssertionError();
-        }
+        default -> throw new AssertionError();
+    }
     }//GEN-LAST:event_btnCambiarActionPerformed
 
     /**
